@@ -1,12 +1,6 @@
+import 'package:cofredesenha/src/myApp.dart';
 import 'package:flutter/material.dart';
-import 'package:projects/app.dart';
 
 void main() {
-  runApp(const App());
+  runApp(const MyApp());
 }
-
-
-
-
-
-
