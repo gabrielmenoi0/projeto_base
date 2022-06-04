@@ -24,14 +24,15 @@ class _AppState extends State<App> {
       DeviceOrientation.portraitDown,
     ]);
 
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        statusBarColor: Color.fromRGBO(57, 49, 153, 1),
-        statusBarBrightness: Brightness.light,
-        statusBarIconBrightness: Brightness.light));
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+          statusBarColor: Color.fromRGBO(57, 49, 153, 1),
+          statusBarBrightness: Brightness.light,
+          statusBarIconBrightness: Brightness.light),
+    );
 
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      // theme: DefaultTheme.themeData,
       home: Splash(),
     );
   }
