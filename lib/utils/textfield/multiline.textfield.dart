@@ -3,7 +3,8 @@ import 'package:cofredesenha/utils/textStyle.dart';
 import 'package:flutter/material.dart';
 
 class AppMultilineTextField extends StatefulWidget {
-  const AppMultilineTextField({Key? key,
+  const AppMultilineTextField({
+    Key? key,
     this.textEditingController,
     this.enabled,
     this.maxLength,
@@ -34,7 +35,6 @@ class AppMultilineTextField extends StatefulWidget {
 }
 
 class _AppMultilineTextField extends State<AppMultilineTextField> {
-
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -48,10 +48,7 @@ class _AppMultilineTextField extends State<AppMultilineTextField> {
       textInputAction: widget.textInputAction ?? TextInputAction.done,
       minLines: 1,
       maxLines: 3,
-      style: DefaultStyle.textStyle(
-          size: 16,
-          fontWeight: FontWeight.w500
-      ),
+      style: DefaultStyle.textStyle(size: 16, fontWeight: FontWeight.w500),
       decoration: InputDecoration(
         enabledBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.white),
@@ -67,9 +64,7 @@ class _AppMultilineTextField extends State<AppMultilineTextField> {
         helperText: widget.helperText,
         fillColor: Colors.white,
         errorMaxLines: 3,
-        errorStyle: const TextStyle(
-            color: Colors.red
-        ),
+        errorStyle: const TextStyle(color: Colors.red),
         labelStyle: DefaultStyle.textStyle(
             size: 20,
             color: DefaultColors.darkColor2,
@@ -82,4 +77,3 @@ class _AppMultilineTextField extends State<AppMultilineTextField> {
     );
   }
 }
-

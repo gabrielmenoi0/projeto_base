@@ -7,14 +7,13 @@ class SaveAccountModel {
   String? observation;
   Cliente? cliente;
 
-
-  SaveAccountModel(
-      {this.id,
-        this.local,
-        this.password,
-        this.observation,
-        this.cliente,
-      });
+  SaveAccountModel({
+    this.id,
+    this.local,
+    this.password,
+    this.observation,
+    this.cliente,
+  });
 
   SaveAccountModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -22,8 +21,6 @@ class SaveAccountModel {
     password = json['password'];
     observation = json['observation'];
     cliente = json['cliente'];
-
-
   }
 
   Map<String, dynamic> toJson() {

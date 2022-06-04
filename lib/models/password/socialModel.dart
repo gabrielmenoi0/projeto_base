@@ -8,21 +8,21 @@ class SocialModel {
   String? ob;
   Cliente? cliente;
 
-  SocialModel(
-      {this.id,
-        this.name,
-        this.password,
-        this.type,
-        this.ob,
-        this.cliente,
-      });
+  SocialModel({
+    this.id,
+    this.name,
+    this.password,
+    this.type,
+    this.ob,
+    this.cliente,
+  });
 
   SocialModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     password = json['passwordSocial'];
     type = json['type'];
-    cliente= json['cliente'];
+    cliente = json['cliente'];
   }
 
   Map<String, dynamic> toJson() {

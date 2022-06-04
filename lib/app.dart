@@ -18,7 +18,6 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitUp,
@@ -28,8 +27,7 @@ class _AppState extends State<App> {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
         statusBarColor: Color.fromRGBO(57, 49, 153, 1),
         statusBarBrightness: Brightness.light,
-        statusBarIconBrightness: Brightness.light
-    ));
+        statusBarIconBrightness: Brightness.light));
 
     return const MaterialApp(
       debugShowCheckedModeBanner: false,

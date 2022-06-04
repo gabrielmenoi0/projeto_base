@@ -1,8 +1,6 @@
-
 import 'package:cofredesenha/utils/styles.dart';
 import 'package:cofredesenha/utils/textStyle.dart';
 import 'package:flutter/material.dart';
-
 
 class DefaultScreenUtils {
   static onMessage({
@@ -12,16 +10,12 @@ class DefaultScreenUtils {
     SnackBarAction? action,
   }) {
     return ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      content: Text(
-          message,
+      content: Text(message,
           style: DefaultStyle.textStyle(
-              size: 14,
-              fontWeight: FontWeight.w500,
-              color: Colors.white
-          )
-      ),
+              size: 14, fontWeight: FontWeight.w500, color: Colors.white)),
       action: action,
-      backgroundColor: isError ? Colors.redAccent : DefaultColors.secondaryColor,
+      backgroundColor:
+          isError ? Colors.redAccent : DefaultColors.secondaryColor,
     ));
   }
 
@@ -42,21 +36,19 @@ class DefaultScreenUtils {
               style: DefaultStyle.textStyle(
                   size: 20,
                   fontWeight: FontWeight.w700,
-                  color: isError ? DefaultColors.secondaryColorDark : DefaultColors.primaryColorDark
-              )),
-          content: Text(
-              message,
+                  color: isError
+                      ? DefaultColors.secondaryColorDark
+                      : DefaultColors.primaryColorDark)),
+          content: Text(message,
               style: DefaultStyle.textStyle(
                   size: 16,
                   fontWeight: FontWeight.w400,
-                  color: DefaultColors.textColor
-              )),
+                  color: DefaultColors.textColor)),
           actions: action,
         );
       },
     );
   }
-
 
   static onLoading() {
     return const Center(

@@ -14,12 +14,12 @@ class SecureStorage {
     return readData;
   }
 
-  Future deleteSecureData(String key) async{
+  Future deleteSecureData(String key) async {
     var deleteData = await _storage.delete(key: key);
     return deleteData;
   }
 
-  Future deletePasswords(String key, Passwords item) async{
+  Future deletePasswords(String key, Passwords item) async {
     var deleteData = await _storage.delete(key: key);
     return deleteData;
   }

@@ -9,14 +9,14 @@ class BankModel {
   String? type;
   Cliente? cliente;
 
-  BankModel(
-      {this.bank,
-        this.agency,
-        this.account,
-        this.password,
-        this.type,
-        this.cliente,
-      });
+  BankModel({
+    this.bank,
+    this.agency,
+    this.account,
+    this.password,
+    this.type,
+    this.cliente,
+  });
 
   BankModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -26,7 +26,6 @@ class BankModel {
     password = json['bankpassword'];
     type = json['type'];
     cliente = json['cliente'];
-
   }
 
   Map<String, dynamic> toJson() {

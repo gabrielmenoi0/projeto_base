@@ -6,14 +6,12 @@ class LoginModel {
   String? email;
   Cliente? cliente;
 
-
-  LoginModel(
-      {this.nome,
-        this.senha,
-        this.email,
-        this.cliente,
-
-      });
+  LoginModel({
+    this.nome,
+    this.senha,
+    this.email,
+    this.cliente,
+  });
 
   LoginModel.fromJson(Map<String, dynamic> json) {
     nome = json['NOME'];

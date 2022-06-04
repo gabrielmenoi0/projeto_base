@@ -1,17 +1,15 @@
 class Cliente {
-
   String? nome;
   String? email;
   String? senha;
   //DATABASE LOCAL
   int? id;
 
-  Cliente(
-      {
-        this.nome,
-        this.email,
-        this.senha,
-      });
+  Cliente({
+    this.nome,
+    this.email,
+    this.senha,
+  });
 
   Cliente.fromJson(Map<String, dynamic> json) {
     nome = json['nome'];

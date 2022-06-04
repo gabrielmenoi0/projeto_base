@@ -3,5 +3,5 @@
 
 //WIDGET
 const double margin = 20;
-const String password ="password";
-const String user ="user";
+const String password = "password";
+const String user = "user";

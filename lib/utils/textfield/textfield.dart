@@ -4,34 +4,35 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class DefaultTextField extends StatefulWidget {
-  const DefaultTextField({Key? key,
-    this.textEditingController,
-    this.autofocus,
-    this.enabled,
-    this.maxLength,
-    this.hintText,
-    this.labelText,
-    this.helperText,
-    this.keyboardType,
-    this.textInputAction,
-    this.onSaved,
-    this.validator,
-    this.onChanged,
-    this.onFieldSubmitted,
-    this.suffixIcon,
-    this.prefixIcon,
-    this.suffixWidget,
-    this.prefixWidget,
-    this.floatingLabelBehavior,
-    this.inputFormatters,
-    this.autoValidateMode,
-    this.hasBorder = true,
-    this.isPassword = false,
-    this.style,
-    this.textAlign,
-    this.minLines,
-    this.maxLines
-  }) : super(key: key);
+  const DefaultTextField(
+      {Key? key,
+      this.textEditingController,
+      this.autofocus,
+      this.enabled,
+      this.maxLength,
+      this.hintText,
+      this.labelText,
+      this.helperText,
+      this.keyboardType,
+      this.textInputAction,
+      this.onSaved,
+      this.validator,
+      this.onChanged,
+      this.onFieldSubmitted,
+      this.suffixIcon,
+      this.prefixIcon,
+      this.suffixWidget,
+      this.prefixWidget,
+      this.floatingLabelBehavior,
+      this.inputFormatters,
+      this.autoValidateMode,
+      this.hasBorder = true,
+      this.isPassword = false,
+      this.style,
+      this.textAlign,
+      this.minLines,
+      this.maxLines})
+      : super(key: key);
 
   final TextEditingController? textEditingController;
   final bool? autofocus;
@@ -77,14 +78,14 @@ class _DefaultTextField extends State<DefaultTextField> {
       onSaved: widget.onSaved,
       minLines: widget.minLines,
       maxLines: widget.isPassword ? 1 : widget.maxLines,
-      style: widget.style ?? DefaultStyle.textStyle(
-        size: 16,
-        fontWeight: FontWeight.w500,
-        color: DefaultColors.textColor
-      ),
+      style: widget.style ??
+          DefaultStyle.textStyle(
+              size: 16,
+              fontWeight: FontWeight.w500,
+              color: DefaultColors.textColor),
       textAlign: widget.textAlign ?? TextAlign.start,
       validator: (value) {
-        if(widget.validator != null) {
+        if (widget.validator != null) {
           return widget.validator!(value!);
         }
 
@@ -98,61 +99,53 @@ class _DefaultTextField extends State<DefaultTextField> {
       keyboardType: widget.keyboardType ?? TextInputType.text,
       textInputAction: widget.textInputAction ?? TextInputAction.done,
       decoration: InputDecoration(
-        floatingLabelBehavior: widget.floatingLabelBehavior,
-        enabledBorder: widget.hasBorder ? const UnderlineInputBorder(
-            borderSide: BorderSide(
-                color: DefaultColors.darkColor99
-            )
-        ) : InputBorder.none,
-        focusedBorder: widget.hasBorder ? const UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: DefaultColors.darkColor99
-          )
-        ) : InputBorder.none,
-        border: widget.hasBorder ? const UnderlineInputBorder(
-            borderSide: BorderSide(
-                color: DefaultColors.darkColor99
-            )
-        ) : InputBorder.none,
-        suffixIcon: widget.suffixIcon,
-        prefixIcon: widget.prefixIcon,
-        prefix: widget.prefixWidget,
-        suffix: widget.isPassword ? GestureDetector(
-          child: Icon(
-            _obscureText ? Icons.visibility_off: Icons.visibility,
-            color: DefaultColors.textColor,
-          ),
-          onTap: () {
-            setState(() {
-              _obscureText = !_obscureText;
-            });
-          },
-        ) : widget.suffixWidget,
-        hintText: widget.hintText,
-        labelText: widget.labelText,
-        helperText: widget.helperText,
-        fillColor: Colors.white,
-        errorMaxLines: 3,
-        errorStyle: const TextStyle(
-          color: Colors.red
-        ),
-        labelStyle: DefaultStyle.textStyle(
-          size: 16,
-          fontWeight: FontWeight.w400,
-          color: DefaultColors.darkColor2
-        ),
-        floatingLabelStyle: DefaultStyle.textStyle(
-          size: 20,
-          fontWeight: FontWeight.w400,
-          color: DefaultColors.darkColor2
-        ),
-        hintStyle: DefaultStyle.textStyle(
-          size: 20,
-          fontWeight: FontWeight.w400,
-          color: DefaultColors.lightColor2
-        )
-      ),
+          floatingLabelBehavior: widget.floatingLabelBehavior,
+          enabledBorder: widget.hasBorder
+              ? const UnderlineInputBorder(
+                  borderSide: BorderSide(color: DefaultColors.darkColor99))
+              : InputBorder.none,
+          focusedBorder: widget.hasBorder
+              ? const UnderlineInputBorder(
+                  borderSide: BorderSide(color: DefaultColors.darkColor99))
+              : InputBorder.none,
+          border: widget.hasBorder
+              ? const UnderlineInputBorder(
+                  borderSide: BorderSide(color: DefaultColors.darkColor99))
+              : InputBorder.none,
+          suffixIcon: widget.suffixIcon,
+          prefixIcon: widget.prefixIcon,
+          prefix: widget.prefixWidget,
+          suffix: widget.isPassword
+              ? GestureDetector(
+                  child: Icon(
+                    _obscureText ? Icons.visibility_off : Icons.visibility,
+                    color: DefaultColors.textColor,
+                  ),
+                  onTap: () {
+                    setState(() {
+                      _obscureText = !_obscureText;
+                    });
+                  },
+                )
+              : widget.suffixWidget,
+          hintText: widget.hintText,
+          labelText: widget.labelText,
+          helperText: widget.helperText,
+          fillColor: Colors.white,
+          errorMaxLines: 3,
+          errorStyle: const TextStyle(color: Colors.red),
+          labelStyle: DefaultStyle.textStyle(
+              size: 16,
+              fontWeight: FontWeight.w400,
+              color: DefaultColors.darkColor2),
+          floatingLabelStyle: DefaultStyle.textStyle(
+              size: 20,
+              fontWeight: FontWeight.w400,
+              color: DefaultColors.darkColor2),
+          hintStyle: DefaultStyle.textStyle(
+              size: 20,
+              fontWeight: FontWeight.w400,
+              color: DefaultColors.lightColor2)),
     );
   }
 }
-

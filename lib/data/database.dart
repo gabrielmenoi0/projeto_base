@@ -33,7 +33,6 @@ const String columnaccaunt = 'account';
 const String columnpasswordBank = 'bankpassword';
 const String columntypeBank = 'type';
 
-
 const String tableSocial = 'Social';
 const String columnSocialtId = 'id';
 const String columnname = 'name';
@@ -42,11 +41,7 @@ const String columntype = 'type';
 const String columnpasswordSocial = 'passwordSocial';
 const String columnObservationSocial = 'ob';
 
-
-
-
 class DatabaseProvider {
-
   DatabaseProvider._();
 
   static final DatabaseProvider db = DatabaseProvider._();
@@ -109,8 +104,8 @@ class DatabaseProvider {
     $columnObservationSocial text,
     $columnUserOthers text 
     )''');
-
   }
+
   Future<int> editCliente(Cliente saveAccountModel) async {
     final db = await database;
     // var cpf = await getCustomer();
@@ -130,6 +125,7 @@ class DatabaseProvider {
 
     return res;
   }
+
   Future<int> saveBank(BankModel saveAccountModel) async {
     final db = await database;
     // var cpf = await getCustomer();
@@ -140,11 +136,11 @@ class DatabaseProvider {
       columnpasswordBank: saveAccountModel.password ?? "",
       columntypeBank: saveAccountModel.type ?? "",
       columnUser: saveAccountModel.cliente ?? "",
-
     });
 
     return res;
   }
+
   Future<int> editBank(BankModel saveAccountModel) async {
     final db = await database;
     // var cpf = await getCustomer();
@@ -164,29 +160,30 @@ class DatabaseProvider {
 
     return res;
   }
+
   Future<List<BankModel>> getBank() async {
     final db = await database;
     var res = await db.query(tableBank);
-    List<BankModel> list = res.isNotEmpty
-        ? res.map((c) => BankModel.fromJson(c)).toList()
-        : [];
+    List<BankModel> list =
+        res.isNotEmpty ? res.map((c) => BankModel.fromJson(c)).toList() : [];
     return list;
   }
 
   Future<int> deleteBank(BankModel saveAccountModel) async {
     final db = await database;
-    var res = await db.delete(tableBank,where: "id = ?", whereArgs: [saveAccountModel.id]);
+    var res = await db
+        .delete(tableBank, where: "id = ?", whereArgs: [saveAccountModel.id]);
     return res;
   }
 
   Future<List<SocialModel>> getSocial() async {
     final db = await database;
     var res = await db.query(tableSocial);
-    List<SocialModel> list = res.isNotEmpty
-        ? res.map((c) => SocialModel.fromJson(c)).toList()
-        : [];
+    List<SocialModel> list =
+        res.isNotEmpty ? res.map((c) => SocialModel.fromJson(c)).toList() : [];
     return list;
   }
+
   Future<int> saveSocial(SocialModel saveAccountModel) async {
     final db = await database;
     // var cpf = await getCustomer();
@@ -196,11 +193,11 @@ class DatabaseProvider {
       columntype: saveAccountModel.type ?? "",
       // columnObservationSocial: saveAccountModel.ob?? "",
       columnUser: saveAccountModel.cliente ?? "",
-
     });
 
     return res;
   }
+
   Future<int> editSocial(SocialModel saveAccountModel) async {
     final db = await database;
     // var cpf = await getCustomer();
@@ -223,12 +220,14 @@ class DatabaseProvider {
 
   Future<int> deleteSocial(SocialModel saveAccountModel) async {
     final db = await database;
-    var res = await db.delete(tableSocial,where: "id = ?", whereArgs: [saveAccountModel.id]);
+    var res = await db
+        .delete(tableSocial, where: "id = ?", whereArgs: [saveAccountModel.id]);
     return res;
   }
 
-
-  Future<int> saveCustomer(Cliente responseModel,) async {
+  Future<int> saveCustomer(
+    Cliente responseModel,
+  ) async {
     final db = await database;
     var res = await db.insert(tableUser, {
       columnName: responseModel.nome ?? "",
@@ -249,12 +248,10 @@ class DatabaseProvider {
     final db = await database;
     var res = await db.query(tableUser);
 
-    List<Cliente> list = res.isNotEmpty
-        ? res.map((c) => Cliente.fromJson(c)).toList()
-        : [];
+    List<Cliente> list =
+        res.isNotEmpty ? res.map((c) => Cliente.fromJson(c)).toList() : [];
     return list.first;
   }
-
 
   Future<int> saveAccount(SaveAccountModel saveAccountModel) async {
     final db = await database;
@@ -267,6 +264,7 @@ class DatabaseProvider {
 
     return res;
   }
+
   Future<int> editAccount(SaveAccountModel saveAccountModel) async {
     final db = await database;
     // var cpf = await getCustomer();
@@ -282,7 +280,8 @@ class DatabaseProvider {
 
   Future<int> deleteAccount(SaveAccountModel saveAccountModel) async {
     final db = await database;
-    var res = await db.delete(tableAccount,where: "id = ?", whereArgs: [saveAccountModel.id]);
+    var res = await db.delete(tableAccount,
+        where: "id = ?", whereArgs: [saveAccountModel.id]);
     return res;
   }
 
